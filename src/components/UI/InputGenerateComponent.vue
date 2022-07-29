@@ -1,15 +1,22 @@
 <template lang="pug">
 .input
   input.input__field(
-    :placeholder="placeholder"
+
   )
+  ButtonComponent Копировать
 </template>
 
 <script>
+import ButtonComponent from "@/components/UI/ButtonComponent";
 export default {
   name: "GenerateInputComponent",
+  components: {ButtonComponent},
   props: {
-    placeholder: String
+    placeholder: {
+      type: String,
+      required: false
+    }
+
   }
 }
 </script>
@@ -18,7 +25,12 @@ export default {
 .input {
 
   &__field {
-    max-width: 430px;
+    width: 430px;
+    height: 44px;
+    border-radius: 24px;
+    padding: 14px 20px;
+
+    outline: none;
   }
 }
 </style>

@@ -75,8 +75,8 @@ export default {
     &.ant-menu-item-active,
     &.ant-dropdown-menu-item-selected{
       svg {
-        fill: $primary-color;
-        stroke: $primary-color;
+        fill: $primaryColor;
+        stroke: $primaryColor;
       }
     }
   }

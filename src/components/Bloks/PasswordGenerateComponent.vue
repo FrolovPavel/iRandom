@@ -1,7 +1,7 @@
 <template lang="pug">
 section.password-generate
   .container
-    TitleComponent.password-generate__title Генерация поролей
+    TitleComponent.password-generate__title Генерация паролей
     .password-generate__control
       InputGenerateComponent.password-generate__input(
         placeholder="Пароль"

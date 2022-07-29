@@ -5,7 +5,7 @@ module.exports = defineConfig({
     loaderOptions: {
       // для использования переменных scss в компонентах
       sass: {
-        additionalData: `@import "@/assets/styles/variables.scss";`
+        additionalData: `@import "@/assets/styles/main.scss";`
       },
       // для изминения дефолтных less переменных ant
       less: {
