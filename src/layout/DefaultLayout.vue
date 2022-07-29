@@ -11,7 +11,3 @@ export default {
   components: {HeaderComponent}
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -1,17 +1,34 @@
 <template lang="pug">
-GenerateInputComponent(
-  placeholder="Пароль"
-)
+section.password-generate
+  .container
+    TitleComponent.password-generate__title Генерация поролей
+    .password-generate__control
+      InputGenerateComponent.password-generate__input(
+        placeholder="Пароль"
+      )
 </template>
 
 <script>
-import GenerateInputComponent from "@/components/UI/GenerateInputComponent";
+import InputGenerateComponent from "@/components/UI/InputGenerateComponent";
+import TitleComponent from "@/components/UI/TitleComponent";
 export default {
   name: "PasswordGenerateComponent",
-  components: {GenerateInputComponent}
+  components: {TitleComponent, InputGenerateComponent}
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 
+.password-generate {
+
+  &__title {
+    text-align: center;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 </style>

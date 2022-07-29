@@ -1,5 +1,23 @@
+* {
+  font-family: Exo2, sans-serif;
+  font-weight: 400;
+}
+
 .container {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700 !important;
+
+  @media (min-width: $mobileMiddle) {
+    font-size: 32px;
+  }
+
+  @media (min-width: $tablet) {
+    font-size: 48px;
+  }
 }

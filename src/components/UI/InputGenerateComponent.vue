@@ -1,7 +1,8 @@
 <template lang="pug">
-input(
-  :placeholder="placeholder"
-)
+.input
+  input.input__field(
+    :placeholder="placeholder"
+  )
 </template>
 
 <script>
@@ -13,6 +14,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.input {
 
+  &__field {
+    max-width: 430px;
+  }
+}
 </style>

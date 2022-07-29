@@ -1,0 +1,17 @@
+// SIZES
+$mobileSmall: 320px;
+$mobileMiddle: 360px;
+$tablet: 768px;
+$tabletLand: 1024px;
+$notebook: 1240px;
+$desktop: 1440px;
+
+$mobileMax: $tablet - 1px;
+$tabletMax: $tabletLand - 1px;
+$tabletLandMax: $notebook - 1px;
+$notebookMax: $desktop - 1px;
+
+$maxContainer: 1440px;
+
+// COLORS
+$primary-color: #366AF3;
