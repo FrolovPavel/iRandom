@@ -7,7 +7,7 @@
 <script>
 import LogoIcon from "@/components/Icons/LogoIcon";
 export default {
-  name: "LogoComponent",
+  name: "AppLogo",
   components: {
     LogoIcon
   }

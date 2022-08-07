@@ -29,14 +29,14 @@ a-menu.menu(v-model:selectedKeys="current" mode="horizontal" )
 </template>
 
 <script>
-import {ref, watch} from 'vue'
-import {  useRoute } from 'vue-router'
+import {ref, watch} from 'vue';
+import {  useRoute } from 'vue-router';
 import LockIcon from "@/components/Icons/LockIcon";
 import NumberIcon from "@/components/Icons/NumberIcon";
 import WinnerIcon from "@/components/Icons/WinnerIcon";
 import AboutIcon from "@/components/Icons/AboutIcon";
 export default {
-  name: 'NavListComponent',
+  name: 'AppNavList',
   components: {AboutIcon, WinnerIcon, NumberIcon, LockIcon},
   setup() {
     const route = useRoute()
@@ -55,11 +55,21 @@ export default {
 <style lang="scss">
 .menu {
   border-bottom: none;
-  width: 100%;
+  padding: 0 !important;
+  overflow: hidden;
+
+  @media (min-width: $tablet) {
+    width: 100%;
+  }
 
   &__item {
     display: flex !important;
     align-items: center;
+    padding: 10px 20px !important;
+
+    @media (min-width: $tablet) {
+      padding: 0 20px !important;
+    }
 
     svg {
       stroke: #000;
@@ -67,7 +77,7 @@ export default {
       path,
       circle,
       polyline{
-        transition: fill 0.3s, stroke 0.3s;
+        transition: fill $transitionBase, stroke 0.3s;
       }
     }
 

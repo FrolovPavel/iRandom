@@ -1,11 +1,13 @@
 const { defineConfig } = require('@vue/cli-service')
+
 module.exports = defineConfig({
   transpileDependencies: true,
   css: {
     loaderOptions: {
       // для использования переменных scss в компонентах
       sass: {
-        additionalData: `@import "@/assets/styles/main.scss";`
+        additionalData: `@import "@/assets/styles/variables.scss";
+        @import "@/assets/styles/mixin.scss";`
       },
       // для изминения дефолтных less переменных ant
       less: {
@@ -32,5 +34,5 @@ module.exports = defineConfig({
         }
       ]
     }
-  }
+  },
 })

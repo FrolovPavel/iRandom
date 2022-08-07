@@ -14,6 +14,23 @@ $notebookMax: $desktop - 1px;
 $maxContainer: 1440px;
 
 // COLORS
+$white: #fff;
+$dark: #000000d9;
 $primaryColor: #366AF3;
+$successColor: #41db92;
+$warnColor: #fed309;
+$dangerColor: #fe1334;
+$borderColor: #f0f0f0;
 
-$bordorColor: #f0f0f0
+// BORDERS
+$borderBase: 1px solid $borderColor;
+$borderRadiusBase: 16px;
+$borderRadiusLarge: 24px;
+
+// SHADOW
+$shadowBase: 0 1px 6px rgb(32 33 36 / 28%);
+
+// TRANSITION
+$transitionBase: .3s;
+
+

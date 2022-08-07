@@ -1,14 +1,14 @@
 <template lang="pug">
-InputGenerateComponent(
+AppInputGenerate(
   placeholder="Число"
 )
 </template>
 
 <script>
-import InputGenerateComponent from "@/components/UI/InputGenerateComponent";
+import AppInputGenerate from "@/components/UI/AppInputGenerate";
 export default {
   name: "PasswordGenerateComponent",
-  components: {InputGenerateComponent}
+  components: {AppInputGenerate}
 }
 </script>
 

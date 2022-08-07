@@ -1,23 +1,33 @@
 <template lang="pug">
 header.header
   .container.header__container
-    LogoComponent
-    NavComponent
+    AppLogo
+    AppNav
 </template>
 
 <script>
-import NavComponent from "@/components/UI/NavComponent";
-import LogoComponent from "@/components/UI/LogoComponent";
+import AppLogo from "@/components/UI/AppLogo";
+import AppNav from "@/components/UI/AppNav";
 export default {
   name: "HeaderComponent",
-  components: {LogoComponent, NavComponent}
+  components: {AppNav, AppLogo}
 }
 </script>
 
 <style scoped lang="scss">
 .header {
-  border-bottom: 1px solid #f0f0f0;
+  //border-bottom: $borderBase;
   height: 46px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 1%;
+    width: 100%;
+    height: 1px;
+    background-color: $borderColor;
+  }
 
   &__container {
     display: flex;

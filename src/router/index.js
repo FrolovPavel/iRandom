@@ -1,20 +1,20 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import PasswordGenerateComponent from "@/components/Bloks/PasswordGenerateComponent";
-import NumberGenerateComponent from "@/components/Bloks/NumberGenerateComponent";
-import AboutProjectComponent from "@/components/Bloks/AboutProjectComponent";
+import { createRouter, createWebHistory } from 'vue-router';
+import ThePasswordGeneration from "@/components/Bloks/ThePasswordGeneration";
+import TheNumberGeneration from "@/components/Bloks/TheNumberGeneration";
+import TheAbout from "@/components/Bloks/TheAbout";
 
 const routes = [
   {
     path: '/password',
-    component: PasswordGenerateComponent
+    component: ThePasswordGeneration
   },
   {
     path: '/number',
-    component: NumberGenerateComponent
+    component: TheNumberGeneration
   },
   {
     path: '/about',
-    component: AboutProjectComponent
+    component: TheAbout
   },
 ]
 

@@ -1,7 +1,6 @@
-<template>
-  <DefaultLayout>
-    <router-view></router-view>
-  </DefaultLayout>
+<template lang="pug">
+DefaultLayout
+  router-view
 </template>
 
 <script>

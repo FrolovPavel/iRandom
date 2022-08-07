@@ -1,4 +1,4 @@
-import {onDeactivated, onMounted, ref} from "vue";
+import {onUnmounted, onMounted, ref} from "vue";
 
 export default function useWidth() {
   let windowWidth = ref(window.innerWidth)
@@ -7,7 +7,7 @@ export default function useWidth() {
     window.addEventListener('resize', changeWidth)
   })
 
-  onDeactivated(() => {
+  onUnmounted(() => {
     window.removeEventListener('resize', changeWidth)
   })
 

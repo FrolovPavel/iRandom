@@ -1,13 +1,13 @@
 <template lang="pug">
-HeaderComponent
+TheHeader
 main
   slot
 </template>
 
 <script>
-import HeaderComponent from "@/components/Bloks/HeaderComponent";
+import TheHeader from "@/components/Bloks/TheHeader";
 export default {
   name: "DefaultLayout",
-  components: {HeaderComponent}
+  components: {TheHeader}
 }
 </script>

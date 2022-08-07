@@ -1,11 +1,10 @@
 <template lang="pug">
-button.back-button
-  slot
+h1 О проекте
 </template>
 
 <script>
 export default {
-  name: "ButtonComponent"
+  name: "TheAbout"
 }
 </script>
 

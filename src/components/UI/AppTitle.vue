@@ -5,7 +5,7 @@ component.title(:is="`h${level}`")
 
 <script>
 export default {
-  name: "TitleComponent",
+  name: "AppTitle",
   props: {
     level: {
       type: String,
