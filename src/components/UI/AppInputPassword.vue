@@ -1,17 +1,17 @@
 <template lang="pug">
-.input
-  .input__wrapper
-    input.input__field(
+.input-password
+  .input-password__wrapper
+    input.input-password__field(
       readonly
       value="fw;l435jw;otgrjpowwerwerwer2323r2232f24f24f24ff2r24"
     )
-    RefreshIcon.input__refresh(
+    RefreshIcon.input-password__refresh(
       ref="refresh"
       @click="onClickRefresh"
     )
     a-tooltip(v-if="windowWidth < deviceSizes.tablet" title="Пароль надёжеый" trigger="click")
-      AppBadge.input__badge(ref="badge")
-    AppBadge.input__badge(v-else ref="badge") ненадежный
+      AppBadge.input-password__badge(ref="badge")
+    AppBadge.input-password__badge(v-else ref="badge") ненадежный
   CopyIcon(
     v-if="windowWidth < deviceSizes.tablet"
     v-on:click="onClickCopy"
@@ -34,7 +34,7 @@ import useDeviceSizes from "@/hooks/useDeviceSizes";
 import CopyIcon from "@/components/Icons/CopyIcon";
 import AppBadge from "@/components/UI/AppBadge";
 export default {
-  name: "AppInputGenerate",
+  name: "AppInputPassword",
   components: {CopyIcon, AppBadge, RefreshIcon},
   setup() {
     const refresh = ref(null)
@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style lang="scss">
-.input {
+.input-password {
   display: flex;
   align-items: center;
 
@@ -93,7 +93,7 @@ export default {
     position: relative;
 
     &:hover {
-      .input__field {
+      .input-password__field {
         box-shadow: $shadowBase;
       }
     }
