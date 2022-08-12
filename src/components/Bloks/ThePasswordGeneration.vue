@@ -20,9 +20,18 @@ export default {
 <style lang="scss">
 
 .password-generate {
-  padding: 15px 0;
+  padding: 20px 0;
+
+  @media (min-width: $tablet) {
+    padding: 40px 0;
+  }
   &__title {
     text-align: center;
+    margin-bottom: 20px;
+
+    @media (min-width: $tablet) {
+      margin-bottom: 40px;
+    }
   }
 
   &__action {

@@ -30,13 +30,33 @@ export default {
 <style lang="scss" scoped>
 .slider {
 
+  &__title {
+    line-height: 1;
+    margin-bottom: 10px;
+    @media (min-width: $tablet) {
+      margin-bottom: 3px;
+      margin-right: 20px;
+    }
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
+    @media (min-width: $tablet) {
+      flex-grow: 1;
+    }
   }
 
   &__runner {
     flex-grow: 1;
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  &__input {
+    width: 56px;
+    height: 26.5px;
+
   }
 }
 </style>
