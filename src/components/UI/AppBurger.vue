@@ -22,19 +22,14 @@ export default {
       isActive.value = !isActive.value
     }
     const bodyListener = (event) => {
-      // console.log(!event.path.includes(burgerButton.value))
-      // console.log(event.path)
-      console.log(burgerButton.value)
       if(!event.path.includes(burgerButton.value)) {
         isActive.value = false
       }
     }
     onMounted(() => {
-      console.log('mount')
       body.addEventListener('click', bodyListener)
     })
     onUnmounted(() => {
-      console.log('deactiv')
       body.removeEventListener('click', bodyListener)
     })
 

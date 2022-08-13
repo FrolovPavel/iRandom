@@ -3,7 +3,7 @@
   .input-password__wrapper
     input.input-password__field(
       readonly
-      value="fw;l435jw;otgrjpowwerwerwer2323r2232f24f24f24ff2r24"
+      :value="password"
     )
     RefreshIcon.input-password__refresh(
       ref="refresh"
@@ -36,6 +36,12 @@ import AppBadge from "@/components/UI/AppBadge";
 export default {
   name: "AppInputPassword",
   components: {CopyIcon, AppBadge, RefreshIcon},
+  props: {
+    password: {
+      type: String,
+      required: true
+    }
+  },
   setup() {
     const refresh = ref(null)
 
