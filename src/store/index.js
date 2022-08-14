@@ -1,14 +1,8 @@
 import { createStore } from 'vuex'
+import password from './modules/passwords/module'
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    password
   }
 })

@@ -18,20 +18,20 @@ section.password-generate
 import AppTitle from "@/components/UI/AppTitle";
 import AppInputPassword from "@/components/UI/AppInputPassword";
 import AppPasswordControl from "@/components/UI/AppPasswordControl";
-import {onMounted, onUpdated, ref} from "vue";
+import {computed, onMounted, onUpdated, ref} from "vue";
+import {useStore} from "vuex";
+
 export default {
   name: "ThePasswordGeneration",
   components: {AppPasswordControl, AppInputPassword, AppTitle},
   setup() {
-    const passwords = ref([
-      'j24on23422g!',
-      'j24on23422g!',
-      'j24on23422g!',
-      'j24on23422g!',
-      'j24on23422g!',
-      'j24on23422g!',
-      'j24on23422g!',
-    ])
+    const store = useStore()
+
+    const passwords = computed(() => store.getters["password/passwords"])
+
+    const passwordGenerate = () => {
+      store.commit('password/generatePassword')
+    }
 
     const wrapperFields = ref(null)
 
@@ -46,6 +46,7 @@ export default {
 
     onMounted(() => {
       borderOnScroll()
+      passwordGenerate()
     })
 
     onUpdated(() => {
