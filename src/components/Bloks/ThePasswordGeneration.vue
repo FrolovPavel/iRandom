@@ -5,9 +5,10 @@ section.password-generate
   .password-generate__action
     .password-generate__fields(ref="wrapperFields")
       AppInputPassword.password-generate__input(
-        v-for="(password, index) in passwords"
-        :key="password"
-        :password="password"
+        v-for="(item, index) in passwords"
+        :key="item.password"
+        :password="item.password"
+        :security="item.security"
         @refresh="generateDefinitePassword(index)"
       )
     .container

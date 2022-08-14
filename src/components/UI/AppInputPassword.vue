@@ -10,8 +10,8 @@
       @click="onClickRefresh"
     )
     a-tooltip(v-if="windowWidth < deviceSizes.tablet" title="Пароль надёжеый" trigger="click")
-      AppBadge.input-password__badge(ref="badge")
-    AppBadge.input-password__badge(v-else ref="badge") ненадежный
+      AppBadge.input-password__badge(ref="badge" :security="security")
+    AppBadge.input-password__badge(v-else ref="badge" :security="security") ненадежный
   CopyIcon(
     v-if="windowWidth < deviceSizes.tablet"
     v-on:click="onClickCopy"
@@ -33,11 +33,16 @@ import useWidth from "@/hooks/useWidth";
 import useDeviceSizes from "@/hooks/useDeviceSizes";
 import CopyIcon from "@/components/Icons/CopyIcon";
 import AppBadge from "@/components/UI/AppBadge";
+
 export default {
   name: "AppInputPassword",
   components: {CopyIcon, AppBadge, RefreshIcon},
   props: {
     password: {
+      type: String,
+      required: true
+    },
+    security: {
       type: String,
       required: true
     }

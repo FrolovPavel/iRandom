@@ -1,15 +1,38 @@
 <template lang="pug">
-span.badge(:class="`badge--${bg}`")
-  slot
+span.badge(:class="`badge--${stateBadge.color}`") {{stateBadge.text}}
 </template>
 
 <script>
+import {computed} from "vue";
+
 export default {
   name: "AppBadge",
   props: {
-    bg: {
-      type: String,
-      default: 'green'
+    security: {
+      type: Number,
+      required: true
+    }
+  },
+  setup(props) {
+    const stateBadge = computed(() => {
+      let state = {text: '', color: ''}
+      if(props.security === 1 || props.security === 2) {
+        state.text = 'ненадежный'
+        state.color = 'red'
+      }
+      if(props.security === 3) {
+        state.text = 'хороший'
+        state.color = 'yellow'
+      }
+      if(props.security === 4) {
+        state.text = 'надежный'
+        state.color = 'green'
+      }
+      return state
+    })
+
+    return {
+      stateBadge
     }
   }
 }

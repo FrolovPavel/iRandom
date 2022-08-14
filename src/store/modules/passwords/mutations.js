@@ -1,26 +1,29 @@
 import {passwordGenerate} from "@/utils/paswordGenerate";
+import {checkSecurityPassword} from "@/utils/checkSecurityPassword";
 
 const generatePassword = (state) => {
   state.passwords = []
   for(let i = 0; i < state.quantityPasswords; i++) {
-    state.passwords.push(passwordGenerate(
+    const password = passwordGenerate(
       state.isLowerCase,
       state.isUpperCase,
       state.isNumeric,
       state.isSpecialCharacters,
       state.lengthPassword,
-    ))
+    )
+    state.passwords.push({password: password, security: checkSecurityPassword(password)})
   }
 }
 
 const generateDefinitePassword = (state, index) => {
-  state.passwords[index] = passwordGenerate(
+  const password = passwordGenerate(
     state.isLowerCase,
     state.isUpperCase,
     state.isNumeric,
     state.isSpecialCharacters,
     state.lengthPassword,
   )
+  state.passwords[index] = {password: password, security: checkSecurityPassword(password)}
 }
 
 const setLowerCase = (state) => {
