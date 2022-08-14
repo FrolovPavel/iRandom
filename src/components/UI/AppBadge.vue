@@ -16,15 +16,15 @@ export default {
   setup(props) {
     const stateBadge = computed(() => {
       let state = {text: '', color: ''}
-      if(props.security === 1 || props.security === 2) {
+      if(props.security === 0) {
         state.text = 'ненадежный'
         state.color = 'red'
       }
-      if(props.security === 3) {
+      if(props.security === 1) {
         state.text = 'хороший'
         state.color = 'yellow'
       }
-      if(props.security === 4) {
+      if(props.security === 2 || props.security === 3) {
         state.text = 'надежный'
         state.color = 'green'
       }
