@@ -5,9 +5,10 @@ section.password-generate
   .password-generate__action
     .password-generate__fields(ref="wrapperFields")
       AppInputPassword.password-generate__input(
-        v-for="password in passwords"
+        v-for="(password, index) in passwords"
         :key="password"
         :password="password"
+        @refresh="generateDefinitePassword(index)"
       )
     .container
       .password-generate__control
@@ -33,8 +34,11 @@ export default {
       store.commit('password/generatePassword')
     }
 
-    const wrapperFields = ref(null)
+    const generateDefinitePassword = (index) => {
+      store.commit('password/generateDefinitePassword', index)
+    }
 
+    const wrapperFields = ref(null)
     const borderOnScroll = () => {
       const el = wrapperFields.value
       if(el.scrollHeight === el.clientHeight) {
@@ -43,19 +47,19 @@ export default {
         el.classList.add('border-bottom')
       }
     }
+    onUpdated(() => {
+      borderOnScroll()
+    })
 
     onMounted(() => {
       borderOnScroll()
       passwordGenerate()
     })
 
-    onUpdated(() => {
-      borderOnScroll()
-    })
-
     return {
       passwords,
-      wrapperFields
+      wrapperFields,
+      generateDefinitePassword
     }
   }
 }

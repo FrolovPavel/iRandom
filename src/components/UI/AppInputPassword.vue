@@ -42,20 +42,22 @@ export default {
       required: true
     }
   },
-  setup() {
+  emits: ['refresh'],
+  setup(props, {emit}) {
+
     const refresh = ref(null)
 
-    const onClickRefresh = () => {
+    const onClickRefresh = async () => {
       let refreshClasses = refresh.value.$el.classList
 
       refreshClasses.add('spin')
       let timeout = setTimeout(()=> {
 
         refreshClasses.remove('spin')
+        emit('refresh')
         clearTimeout(timeout)
       },300)
     }
-
 
     const onClickCopy = () => {
       message.success('Скопирован в буфер обмена', 1)

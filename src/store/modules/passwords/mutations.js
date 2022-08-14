@@ -13,6 +13,16 @@ const generatePassword = (state) => {
   }
 }
 
+const generateDefinitePassword = (state, index) => {
+  state.passwords[index] = passwordGenerate(
+    state.isLowerCase,
+    state.isUpperCase,
+    state.isNumeric,
+    state.isSpecialCharacters,
+    state.lengthPassword,
+  )
+}
+
 const setLowerCase = (state) => {
   state.isLowerCase = !state.isLowerCase
 }
@@ -39,6 +49,7 @@ const setQuantityPasswords = (state, payload) => {
 
 const mutations = {
   generatePassword,
+  generateDefinitePassword,
   setLowerCase,
   setUpperCase,
   setNumeric,

@@ -1,9 +1,6 @@
 <template lang="pug">
 .password-control
   .password-control__left
-    //a-checkbox-group.password-control__checkboxes( v-model:value="checkboxGroup" @change="test" name="checkboxgroup" :options="plainOptions")
-    //  template(#label='{ checkboxGroup }')
-    //    span {{ checkboxGroup }}
     .password-control__checkboxes
       a-checkbox(:checked="isLowerCase" @change="toggleLowerCase") a-z
       a-checkbox(:checked="isUpperCase" @change="toggleUpperCase") A-Z
@@ -24,7 +21,7 @@
 </template>
 
 <script>
-import {computed, onUpdated} from 'vue';
+import {computed, onUpdated, ref} from 'vue';
 import AppSlider from "@/components/UI/AppSlider";
 import {useStore} from "vuex";
 export default {
@@ -37,6 +34,7 @@ export default {
     const isUpperCase = computed(() => store.getters['password/isUpperCase'])
     const isNumeric = computed(() => store.getters['password/isNumeric'])
     const isSpecialCharacters = computed(() => store.getters['password/isSpecialCharacters'])
+    const timer = ref()
 
     const toggleLowerCase = () => {
       store.commit('password/setLowerCase')
@@ -50,8 +48,15 @@ export default {
     const toggleSpecialCharacters = () => {
       store.commit('password/setSpecialCharacters')
     }
+    const updatePassword = () => {
+      clearTimeout(timer.value)
+
+      timer.value = setTimeout(() => {
+        store.commit('password/generatePassword')
+      }, 500)
+    }
     onUpdated( () => {
-      store.commit('password/generatePassword')
+      updatePassword()
     })
 
     const lengthPassword = computed(() => store.getters['password/lengthPassword'])
